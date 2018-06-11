@@ -1,10 +1,23 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Link } from 'react-router';
+import { Row, Col, Button } from 'react-bootstrap';
+import TransactionsList from '../components/TransactionsList';
 
 const Transactions = () => (
-  <div className="container">
-    This is Transactions()
-    <Button bsStyle="primary">Ok react+meteor+bootstrap style</Button>
+  <div className="Transactions">
+    <Row>
+      <Col xs={ 12 }>
+        <div className="page-header clearfix">
+          <Link to="/transactions/new">
+            <Button
+              bsStyle="success"
+              className="pull-right"
+              >New Transaction</Button>
+          </Link>
+        </div>
+        <TransactionsList />
+      </Col>
+    </Row>
   </div>
 );
 

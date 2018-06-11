@@ -16,7 +16,10 @@ import RecoverPassword from '../../ui/pages/RecoverPassword.js';
 import ResetPassword from '../../ui/pages/ResetPassword.js';
 import Signup from '../../ui/pages/Signup.js';
 
-import Transactions from '../../ui/pages/Transactions';
+import Transactions from '../../ui/pages/Transactions.js';
+import NewTransaction from '../../ui/pages/NewTransaction.js';
+import EditTransaction from '../../ui/pages/EditTransaction.js';
+import ViewTransaction from '../../ui/pages/ViewTransaction.js';
 
 const authenticate = (nextState, replace) => {
   if (!Meteor.loggingIn() && !Meteor.userId()) {
@@ -37,6 +40,9 @@ Meteor.startup(() => {
         <Route name="editDocument" path="/documents/:_id/edit" component={ EditDocument } onEnter={ authenticate } />
         <Route name="viewDocument" path="/documents/:_id" component={ ViewDocument } onEnter={ authenticate } />
         <Route name="transactions" path="/transactions" component={ Transactions } onEnter={ authenticate } />
+        <Route name="newTransaction" path="/transactions/new" component={ NewTransaction } onEnter={ authenticate } />
+        <Route name="editTransaction" path="/transactions/:_id/edit" component={ EditTransaction } onEnter={ authenticate } />
+        <Route name="viewTransaction" path="/transactions/:_id" component={ ViewTransaction } onEnter={ authenticate } />
         <Route name="login" path="/login" component={ Login } />
         <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />
         <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />
