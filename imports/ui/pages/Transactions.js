@@ -8,6 +8,7 @@ const Transactions = () => (
     <Row>
       <Col xs={ 12 }>
         <div className="page-header clearfix">
+          <h4 className="pull-left">Transactions</h4>
           <Link to="/transactions/new">
             <Button
               bsStyle="success"
