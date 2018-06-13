@@ -7,8 +7,21 @@ export const upsertTransaction = new ValidatedMethod({
   name: 'transactions.upsert',
   validate: new SimpleSchema({
     _id: { type: String, optional: true },
-    orderId: { type: String, optional: true },
-    bank: { type: String, optional: true },
+    client_url: { type: String, optional: true },
+    client_rest_api_endpoint: { type: String, optional: true },
+    bank_account: { type: String, optional: true },
+    bank_no: { type: String, optional: true },
+    bank_name: { type: String, optional: true },
+    bank_short_name: { type: String, optional: true },
+    transfer_type: { type: String, optional: true },
+    amount: { type: String, optional: true },
+    transferred_datetime: { type: String, optional: true },
+    transfer_detail: { type: String, optional: true },
+    is_approved: { type: Boolean, optional: true },
+    createdAt: { type: String, optional: true },
+    creatorId: { type: String, optional: true },
+    client_transaction_id: { type: String, optional: true },
+    remoteAddress: { type: String, optional: true },
   }).validator(),
   run(transaction) {
     return Transactions.upsert({ _id: transaction._id }, { $set: transaction });

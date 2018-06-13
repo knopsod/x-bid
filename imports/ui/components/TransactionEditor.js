@@ -8,7 +8,7 @@ import transactionEditor from '../../modules/transaction-editor.js';
 export default class TransactionEditor extends React.Component {
   componentDidMount() {
     transactionEditor({ component: this });
-    setTimeout(() => { document.querySelector('[name="orderId"]').focus(); }, 0);
+    setTimeout(() => { document.querySelector('[name="client_transaction_id"]').focus(); }, 0);
   }
 
   render() {
@@ -18,21 +18,21 @@ export default class TransactionEditor extends React.Component {
       onSubmit={ event => event.preventDefault() }
     >
       <FormGroup>
-        <ControlLabel>Order ID</ControlLabel>
+        <ControlLabel>Transaction ID</ControlLabel>
         <FormControl
           type="text"
-          name="orderId"
-          defaultValue={ transaction && transaction.orderId }
-          placeholder="Order ID"
+          name="client_transaction_id"
+          defaultValue={ transaction && transaction.client_transaction_id }
+          placeholder="Transaction ID"
         />
       </FormGroup>
       <FormGroup>
-        <ControlLabel>Bank</ControlLabel>
+        <ControlLabel>Amount</ControlLabel>
         <FormControl
-          componentClass="textarea"
-          name="bank"
-          defaultValue={ transaction && transaction.bank }
-          placeholder="Bank"
+          type="text"
+          name="amount"
+          defaultValue={ transaction && transaction.amount }
+          placeholder="Amount"
         />
       </FormGroup>
       <Button type="submit" bsStyle="success">

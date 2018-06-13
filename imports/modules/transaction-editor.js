@@ -11,8 +11,8 @@ const handleUpsert = () => {
   const { transaction } = component.props;
   const confirmation = transaction && transaction._id ? 'Transaction updated!' : 'Transaction added!';
   const upsert = {
-    orderId: document.querySelector('[name="orderId"]').value.trim(),
-    bank: document.querySelector('[name="bank"]').value.trim(),
+    amount: document.querySelector('[name="amount"]').value.trim(),
+    client_transaction_id: document.querySelector('[name="client_transaction_id"]').value.trim(),
   };
 
   if (transaction && transaction._id) upsert._id = transaction._id;
@@ -31,19 +31,19 @@ const handleUpsert = () => {
 const validate = () => {
   $(component.transactionEditorForm).validate({
     rules: {
-      orderId: {
+      client_transaction_id: {
         required: true,
       },
-      bank: {
+      amount: {
         required: true,
       },
     },
     messages: {
-      orderId: {
-        required: 'Need Order ID',
+      client_transaction_id: {
+        required: 'Need Transaction ID',
       },
-      bank: {
-        required: 'Need Bank',
+      amount: {
+        required: 'Need Amount',
       },
     },
     submitHandler() { handleUpsert(); }

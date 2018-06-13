@@ -30,7 +30,7 @@ const ViewTransaction = ({ transaction }) => {
   return transaction ? (
     <div className="ViewTransaction">
       <div className="page-header clearfix">
-        <h4 className="pull-left">{ transaction && transaction.orderId }</h4>
+        <h4 className="pull-left">{ transaction && transaction.client_transaction_id }</h4>
         <ButtonToolbar className="pull-right">
           <ButtonGroup bsSize="small">
             <Button onClick={ () => handleEdit(transaction._id) }>Edit</Button>
@@ -39,7 +39,7 @@ const ViewTransaction = ({ transaction }) => {
           </ButtonGroup>
         </ButtonToolbar>
       </div>
-      { transaction && transaction.bank }
+      { transaction && transaction.amount }
     </div>
   ) : <NotFound />;
 };

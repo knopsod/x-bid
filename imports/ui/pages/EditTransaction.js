@@ -8,7 +8,7 @@ import container from '../../modules/container';
 
 const EditTransaction = ({ transaction }) => (transaction ? (
   <div className="EditTransaction">
-    <h4 className="page-header">Editing "{ transaction.orderId }"</h4>
+    <h4 className="page-header">Editing "{ transaction.client_transaction_id }"</h4>
     <TransactionEditor transaction={ transaction } />
   </div>
 ) : <NotFound />);

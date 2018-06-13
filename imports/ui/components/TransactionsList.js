@@ -10,9 +10,9 @@ const handleNav = _id => browserHistory.push(`/transactions/${_id}`);
 
 const TransactionsList = ({ transactions }) => (
   transactions.length > 0 ? <ListGroup className="TransactionsList">
-    {transactions.map(({ _id, orderId }) => (
+    {transactions.map(({ _id, client_transaction_id }) => (
       <ListGroupItem key={_id} onClick={ () => handleNav(_id) }>
-        { orderId }
+        { client_transaction_id }
       </ListGroupItem>
     ))}
   </ListGroup> :
