@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const Index = () => (
   <div className="Index">
     <Jumbotron className="text-center">
-      <h2>X-NO</h2>
+      <h2>X-BID</h2>
       <p>Project</p>
       <p>
         <Link to="/sale">
