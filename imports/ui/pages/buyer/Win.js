@@ -5,7 +5,7 @@ const fileName = () => (
   <div>
     <p>
       <h4>
-        <Link to="/">X-NO</Link>
+        <Link to="/">X-BID</Link>
         { ' > '}
         <Link to ="/buyer">Buyer</Link>
         { ' > Win' }

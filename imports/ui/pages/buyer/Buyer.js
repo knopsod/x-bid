@@ -6,7 +6,7 @@ const buyer = () => (
   <div>
     <p>
       <h4>
-        <Link to="/">X-NO</Link>{ ' > Buyer' }
+        <Link to="/">X-BID</Link>{ ' > Buyer' }
       </h4>
     </p>
     <div className="text-center">
