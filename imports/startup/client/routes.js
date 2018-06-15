@@ -21,6 +21,22 @@ import NewTransaction from '../../ui/pages/NewTransaction.js';
 import EditTransaction from '../../ui/pages/EditTransaction.js';
 import ViewTransaction from '../../ui/pages/ViewTransaction.js';
 
+import Sale from '../../ui/pages/sale/Sale.js';
+import Sell from '../../ui/pages/sale/Sell.js';
+import SaleDeposit from '../../ui/pages/sale/Deposit.js';
+import SaleWithdraw from '../../ui/pages/sale/Withdraw.js';
+import SaleWin from '../../ui/pages/sale/Win.js';
+import SaleLost from '../../ui/pages/sale/Lost.js';
+import SaleSummary from '../../ui/pages/sale/Summary.js';
+
+import Buyer from '../../ui/pages/buyer/Buyer.js';
+import Buy from '../../ui/pages/buyer/Buy.js';
+import BuyerDeposit from '../../ui/pages/buyer/Deposit.js';
+import BuyerWithdraw from '../../ui/pages/buyer/Withdraw.js';
+import BuyerWin from '../../ui/pages/buyer/Win.js';
+import BuyerLost from '../../ui/pages/buyer/Lost.js';
+import BuyerSummary from '../../ui/pages/buyer/Summary.js';
+
 const authenticate = (nextState, replace) => {
   if (!Meteor.loggingIn() && !Meteor.userId()) {
     replace({
@@ -43,6 +59,23 @@ Meteor.startup(() => {
         <Route name="newTransaction" path="/transactions/new" component={ NewTransaction } onEnter={ authenticate } />
         <Route name="editTransaction" path="/transactions/:_id/edit" component={ EditTransaction } onEnter={ authenticate } />
         <Route name="viewTransaction" path="/transactions/:_id" component={ ViewTransaction } onEnter={ authenticate } />
+
+        <Route name="sale" path="/sale" component={ Sale } onEnter={ authenticate } />
+        <Route name="sell" path="/sale/sell" component={ Sell } onEnter={ authenticate } />
+        <Route name="saleDeposit" path="/sale/deposit" component={ SaleDeposit } onEnter={ authenticate } />
+        <Route name="saleWithdraw" path="/sale/withdraw" component={ SaleWithdraw } onEnter={ authenticate } />
+        <Route name="saleWin" path="/sale/win" component={ SaleWin } onEnter={ authenticate } />
+        <Route name="saleLost" path="/sale/lost" component={ SaleLost } onEnter={ authenticate } />
+        <Route name="saleSummary" path="/sale/summary" component={ SaleSummary } onEnter={ authenticate } />
+
+        <Route name="buyer" path="/buyer" component={ Buyer } onEnter={ authenticate } />
+        <Route name="buy" path="/buyer/buy" component={ Buy } onEnter={ authenticate } />
+        <Route name="buyerDeposit" path="/buyer/deposit" component={ BuyerDeposit } onEnter={ authenticate } />
+        <Route name="buyerWithdraw" path="/buyer/withdraw" component={ BuyerWithdraw } onEnter={ authenticate } />
+        <Route name="buyerWin" path="/buyer/win" component={ BuyerWin } onEnter={ authenticate } />
+        <Route name="buyerLost" path="/buyer/lost" component={ BuyerLost } onEnter={ authenticate } />
+        <Route name="buyerSummary" path="/buyer/summary" component={ BuyerSummary } onEnter={ authenticate } />
+
         <Route name="login" path="/login" component={ Login } />
         <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />
         <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />
